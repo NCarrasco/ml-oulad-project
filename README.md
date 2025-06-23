@@ -2,6 +2,7 @@
 
 Este repositorio contiene el desarrollo completo del proyecto **Machine Learning – OULAD** de la asignatura **Ciencia de Datos I** de la Maestría en Ciencia de Datos e Inteligencia Artificial (UASD). Se aplica **Machine Learning** para analizar el desempeño académico de estudiantes, utilizando el dataset OULAD y un dataset complementario basado en SABER11/SABERPRO.
 
+---
 ## 🎯 Objetivo
 
 Construir modelos predictivos que identifiquen patrones de éxito académico y participación estudiantil, utilizando variables sociodemográficas, académicas y de interacción (clickstream).
@@ -46,12 +47,22 @@ ml-oulad-project/
 - Cálculo manual del F1-score (TP, FP, TN, FN)
 - Visualizaciones: matriz de confusión, scatter, importancias
 
+---
 ## 👥 Autores
 
 - Norman Carrasco
 - Miguel Pimentel
 - Miguel Consoro
 
+---
 ## 📄 Licencia
 
-Uso exclusivamente académico. No comercial.
+> Proyecto educativo realizado como parte del desarrollo en Ciencia de Datos & AI. Dataset público de OULAD. Todos los datos son anónimos y para uso académico.
+
+---
+## 📫 Contacto
+
+- 📧 normcarrasco@gmail.com  
+- 🔗 [LinkedIn](https://www.linkedin.com/in/nocarrasco)  
+- 🌐 [Blog AprenTICs](https://apren2tics.wordpress.com)
+
