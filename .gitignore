@@ -1,0 +1,34 @@
+# Ignorar salidas y archivos temporales
+results/
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Archivos de sistema de macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+.Spotlight-V100
+.Trashes
+
+# Archivos de Jupyter y Python
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Entornos virtuales
+venv/
+.env/
+.envrc
+
+# Archivos de configuración de VSCode
+.vscode/
+
+# Otros archivos de sistema
+Thumbs.db
+desktop.ini
