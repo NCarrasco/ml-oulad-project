@@ -1,0 +1,11 @@
+# Requisitos del proyecto
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+mysql-connector-python
+tqdm
+imbalanced-learn
+sqlalchemy
+xgboost
