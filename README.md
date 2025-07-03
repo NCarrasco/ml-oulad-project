@@ -1,13 +1,7 @@
 # Machine Learning – OULAD Project
 
-<<<<<<< HEAD
 Este repositorio contiene el desarrollo completo del proyecto final colaborativo de la asignatura **Ciencia de Datos I** de la Maestría en Ciencia de Datos e Inteligencia Artificial (UASD). Se aplica Machine Learning para analizar el desempeño académico de estudiantes, utilizando el dataset OULAD y un dataset complementario basado en SABER11/SABERPRO.
 
-=======
-Este repositorio contiene el desarrollo completo del proyecto **Machine Learning – OULAD** de la asignatura **Ciencia de Datos I** de la Maestría en Ciencia de Datos e Inteligencia Artificial (UASD). Se aplica **Machine Learning** para analizar el desempeño académico de estudiantes, utilizando el dataset OULAD y un dataset complementario basado en SABER11/SABERPRO.
-
----
->>>>>>> 6605f82e4f49aadbf3bb7dd55f6fadf31ba46f3f
 ## 🎯 Objetivo
 
 Construir modelos predictivos que identifiquen patrones de éxito académico y participación estudiantil, utilizando variables sociodemográficas, académicas y de interacción (clickstream).
@@ -17,35 +11,24 @@ Construir modelos predictivos que identifiquen patrones de éxito académico y p
 ```
 ml-oulad-project/
 │
-<<<<<<< HEAD
 ├── config/           → Configuración de conexión (settings.py)
 ├── data/             → (Vacía por defecto) Carpeta para datasets locales (opcional)
 ├── src/              → Scripts Python (pipeline principal, módulos y utilidades)
 │   ├── oulad_pipeline.py
 │   ├── db_connector.py
 │   ├── db_queries.py
-=======
-├── data/             → Datasets OULAD + SABER (anónimos)
-├── src/              → Scripts Python estructurados (POO + TAD)
->>>>>>> 6605f82e4f49aadbf3bb7dd55f6fadf31ba46f3f
 │   ├── eda.py
 │   ├── preprocess.py
 │   ├── models/
 │   └── utils.py
-<<<<<<< HEAD
 ├── notebooks/        → (Vacía por defecto) Jupyter/Colab para EDA y experimentos (opcional)
 ├── docs/             → (Vacía por defecto) Artículo científico (APA) y anexos
-=======
-├── notebooks/        → Colab para EDA, modelos y experimentos
-├── docs/             → Artículo científico (APA)
->>>>>>> 6605f82e4f49aadbf3bb7dd55f6fadf31ba46f3f
 ├── results/          → CSV, métricas, gráficos finales
 ├── schema.sql        → (Opcional) Script SQL si se usó RDBMS
 ├── requirements.txt  → Librerías necesarias
 └── README.md         → Este archivo
 ```
 
-<<<<<<< HEAD
 ## ⚙️ Instalación y configuración
 
 1. **Clona el repositorio y accede a la carpeta:**
@@ -101,20 +84,13 @@ Cuando pida la contraseña, ingresa la que corresponda (por defecto: xxxxx).
    - Por defecto, el pipeline usa 100,000 filas si no se especifica.
 3. Los resultados (métricas, gráficos, predicciones, clustering) se guardarán en la carpeta `results/`.
 
-=======
->>>>>>> 6605f82e4f49aadbf3bb7dd55f6fadf31ba46f3f
 ## 🧠 Tecnologías utilizadas
 
 - Python 3.x
 - Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn
-<<<<<<< HEAD
 - SQLAlchemy, tqdm, imbalanced-learn
 - Google Colab / Visual Studio Code
 - MySQL (opcional)
-=======
-- Google Colab / Visual Studio Code
-- SQL (opcional)
->>>>>>> 6605f82e4f49aadbf3bb7dd55f6fadf31ba46f3f
 
 ## 📊 Metodología
 
@@ -130,18 +106,12 @@ Cuando pida la contraseña, ingresa la que corresponda (por defecto: xxxxx).
 - Cálculo manual del F1-score (TP, FP, TN, FN)
 - Visualizaciones: matriz de confusión, scatter, importancias
 
-<<<<<<< HEAD
 ## 👥 Autores y colaboración
-=======
----
-## 👥 Autores
->>>>>>> 6605f82e4f49aadbf3bb7dd55f6fadf31ba46f3f
 
 - Norman Carrasco
 - Miguel Pimentel
 - Miguel Consoro
 
-<<<<<<< HEAD
 Ver detalles de roles y aportes en el docstring de `src/oulad_pipeline.py`.
 
 ## 📄 Licencia
@@ -233,17 +203,3 @@ A continuación se muestran ejemplos de los gráficos generados automáticamente
     ```
 
 > Estas visualizaciones pueden ser incluidas como anexos o figuras en el informe científico para enriquecer la interpretación de resultados.
-=======
----
-## 📄 Licencia
-
-> Proyecto educativo realizado como parte del desarrollo en Ciencia de Datos & AI. Dataset público de OULAD. Todos los datos son anónimos y para uso académico.
-
----
-## 📫 Contacto
-
-- 📧 normcarrasco@gmail.com  
-- 🔗 [LinkedIn](https://www.linkedin.com/in/nocarrasco)  
-- 🌐 [Blog AprenTICs](https://apren2tics.wordpress.com)
-
->>>>>>> 6605f82e4f49aadbf3bb7dd55f6fadf31ba46f3f
