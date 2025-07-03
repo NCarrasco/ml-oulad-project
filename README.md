@@ -114,6 +114,28 @@ Cuando pida la contraseña, ingresa la que corresponda (por defecto: xxxxx).
 
 Ver detalles de roles y aportes en el docstring de `src/oulad_pipeline.py`.
 
+---
+
+## 👥 Distribución de Tareas
+
+Este proyecto fue desarrollado de forma colaborativa, con la siguiente división de responsabilidades:
+
+| Etapa | Tarea                                              | Responsable         | Fecha límite |
+|-------|----------------------------------------------------|---------------------|--------------|
+| 1     | Definición de hipótesis y objetivos                | Todos               | 22-jun       |
+| 2     | Complementar dataset OULAD con fuentes adicionales | Norman Carrasco     | 24-jun       |
+| 3     | Limpieza y codificación de datos                   | Norman Carrasco     | 26-jun       |
+| 4     | Análisis exploratorio (EDA)                        | Norman Carrasco     | 27-jun       |
+| 5     | Entrenamiento de modelos ML                        | Norman Carrasco     | 28-jun       |
+| 6     | Validación de modelos                              | Miguel Pimentel     | 29-jun       |
+| 7     | Evaluación final de métricas                       | Miguel Consoro      | 30-jun       |
+| 8     | Exportación de resultados                          | Norman Carrasco     | 30-jun       |
+| 9     | Visualizaciones finales                            | Miguel Pimentel     | 01-jul       |
+| 10    | Redacción del artículo                             | Miguel Consoro      | 02-jul       |
+| 11    | Formato APA y referencias                          | Miguel Consoro      | 03-jul       |
+| 12    | Documentación técnica del código                   | Norman Carrasco     | 03-jul       |
+| 13    | Revisión final del entregable                      | Todos               | 04-jul       |
+
 ## 📄 Licencia
 
 Uso exclusivamente académico. No comercial.
