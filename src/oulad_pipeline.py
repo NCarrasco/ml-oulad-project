@@ -25,6 +25,8 @@ import os
 import sys
 import pandas as pd
 import numpy as np
+import time
+import sys
 from typing import Tuple, Optional
 from sqlalchemy import create_engine
 from tqdm import tqdm
@@ -41,78 +43,22 @@ from models.model import OULADModel
 from sklearn.model_selection import train_test_split
 from imblearn.over_sampling import SMOTE
 from sklearn.ensemble import RandomForestClassifier
+from utils import azul_grande, rojo, reset, print_section
+from functions.oulad_functions import OULADDataLoader, OULADInterpreter
 
-class OULADDataLoader:
-    """Clase para cargar los datos OULAD y datasets complementarios."""
-    def __init__(self, base_path: str):
-        self.base_path = base_path
-
-    def load_vle(self, filename: str = "Full_vle_train.csv") -> pd.DataFrame:
-        path = f"{self.base_path}/{filename}"
-        return pd.read_csv(path, encoding='latin1')
-
-    def load_assess(self, filename: str = "Full_assess_train.csv") -> pd.DataFrame:
-        path = f"{self.base_path}/{filename}"
-        return pd.read_csv(path, encoding='latin1')
-
-class OULADInterpreter:
-    """Clase para interpretación de resultados y métricas."""
-    def __init__(self):
-        pass
-
-    def export_metrics(self, y_test, y_pred, path: str):
-        # Exportar y_test, y_pred y métricas manuales a CSV
-        df = pd.DataFrame({'y_test': y_test, 'y_pred': y_pred})
-        df.to_csv(os.path.join(path, 'y_test_y_pred.csv'), index=False)
-        # Cálculo manual de métricas
-        cm = confusion_matrix(y_test, y_pred)
-        tn, fp, fn, tp = (cm.ravel() if cm.size == 4 else (0,0,0,0))
-        # Detectar si el problema es binario o multiclase
-        n_classes = len(np.unique(y_test))
-        if n_classes == 2:
-            avg = 'binary'
-        else:
-            avg = 'macro'
-        f1 = f1_score(y_test, y_pred, average=avg)
-        acc = accuracy_score(y_test, y_pred)
-        prec = precision_score(y_test, y_pred, average=avg, zero_division=0)
-        rec = recall_score(y_test, y_pred, average=avg, zero_division=0)
-        mse = mean_squared_error(y_test, y_pred)
-        r2 = r2_score(y_test, y_pred)
-        metrics = pd.DataFrame([{'TP': tp, 'FP': fp, 'TN': tn, 'FN': fn, 'f1_score': f1, 'accuracy': acc, 'precision': prec, 'recall': rec, 'mse': mse, 'r2': r2}])
-        metrics.to_csv(os.path.join(path, 'metrics_manual.csv'), index=False)
-        return cm, metrics
-
-    def plot_confusion_matrix(self, y_test, y_pred, path: str):
-        cm = confusion_matrix(y_test, y_pred)
-        plt.figure(figsize=(5,4))
-        sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
-        plt.title('Matriz de Confusión')
-        plt.xlabel('Predicho')
-        plt.ylabel('Real')
-        plt.savefig(os.path.join(path, 'confusion_matrix.png'))
-        plt.close()
-
-    def plot_feature_importances(self, model, feature_names, path: str):
-        if hasattr(model, 'feature_importances_'):
-            importances = model.feature_importances_
-            indices = np.argsort(importances)[::-1]
-            plt.figure(figsize=(10,6))
-            plt.title('Importancia de variables')
-            plt.bar(range(len(importances)), importances[indices], align='center')
-            plt.xticks(range(len(importances)), [feature_names[i] for i in indices], rotation=90)
-            plt.tight_layout()
-            plt.savefig(os.path.join(path, 'feature_importances.png'))
-            plt.close()
 
 # Ejemplo de uso del pipeline (main)
-def main(max_rows: int = 100_000):
+def main(max_rows: int = 200_000):
     output_dir = "results"  # Carpeta de salida para métricas y gráficos
     os.makedirs(output_dir, exist_ok=True)  # Crear carpeta si no existe
-    print("\nConectando a la base de datos y cargando datos...")
+    print("\n[94m[1m🔹 CONECTANDO A LA BASE DE DATOS 🔹[0m\n")
     db = OULADDBConnector()
     db.test_connection()
-    print("Cargando datos desde la tabla 'studentVle' y uniendo con 'studentInfo' para obtener 'final_result'...")
+    print(f"\n{azul_grande}🔹 CARGANDO Y VINCULANDO LOS DATOS DESDE LAS TABLAS 'studentVle' Y 'studentInfo' obtener 'final_result'... 🔹{reset}\n")
+    # Simulación de vinculación con barra de progreso
+    for i in tqdm(range(0, 101, 10), desc="Vinculando datos", ncols=80, bar_format="{l_bar}{bar}| {n_fmt}% ", colour="red"):
+        time.sleep(3)
+    # Luego sí lees los datos reales
     df_vle = read_table("studentVle", db)
     df_info = read_table("studentInfo", db)
     # Unir por id_student y code_presentation
@@ -124,7 +70,7 @@ def main(max_rows: int = 100_000):
     else:
         print(f"Leídos {len(df_merged):,} registros tras el join.")
     preprocessor = OULADPreprocessor()
-    print("\nLimpieza y preprocesamiento de datos...")
+    print("\n[94m[1m🔹 PREPROCESAMIENTO Y FEATURE ENGINEERING 🔹[0m\n")
     df_clean, num_vars = preprocessor.clean(df_merged)
     print("Feature engineering...")
     df_feat = preprocessor.feature_engineering(df_clean)
@@ -137,7 +83,7 @@ def main(max_rows: int = 100_000):
         print("[DEBUG] Conteo de valores en procatina:\n", df_feat['procatina'].value_counts())
 
     eda = OULADEDA()
-    print("\nAnálisis exploratorio de datos (EDA)...")
+    print("\n\x1b[94m\x1b[1m🔹 ANÁLISIS EXPLORATORIO DE DATOS (EDA) 🔹\x1b[0m\n")
     for step, func in tqdm(list(enumerate([
         lambda: eda.univariate_analysis(df_feat, output_dir=output_dir),
         lambda: eda.bivariate_analysis(df_feat, output_dir=output_dir),
@@ -146,14 +92,18 @@ def main(max_rows: int = 100_000):
         func()
     modeler = OULADModel()
     # Ejemplo: clasificación binaria (ajustar target según el caso)
+    y = None  # Inicializar y para evitar UnboundLocalError
     if 'procatina' in df_feat.columns:
         X = df_feat.drop(columns=['procatina'])
         y = df_feat['procatina']
+    elif 'final_result' in df_feat.columns:
+        X = df_feat.drop(columns=['final_result'])
+        y = df_feat['final_result']
     else:
-        X = df_feat.drop(columns=['final_result']) if 'final_result' in df_feat.columns else df_feat
-        y = df_feat['final_result'] if 'final_result' in df_feat.columns else None
+        X = df_feat
+       
     if y is not None:
-        print("\nEntrenando clasificadores...")
+        print("\n[94m[1m🔹 MODELADO Y EVALUACIÓN 🔹\n\nEntrenando clasificadores...[0m")
         # Asegurar solo variables numéricas para modelado
         X_model = X.select_dtypes(include=[np.number])
         if X_model.shape[1] == 0:
@@ -199,6 +149,6 @@ def main(max_rows: int = 100_000):
 if __name__ == "__main__":
     import argparse
     parser = argparse.ArgumentParser(description="Pipeline OULAD optimizado para datasets grandes.")
-    parser.add_argument('--max_rows', type=int, default=100_000, help='Número máximo de filas a usar (default: 100000)')
+    parser.add_argument('--max_rows', type=int, default=100_000, help='Número máximo de filas a usar (default: 200000)')
     args = parser.parse_args()
     main(max_rows=args.max_rows)
