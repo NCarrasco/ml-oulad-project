@@ -9,3 +9,4 @@ tqdm
 imbalanced-learn
 sqlalchemy
 xgboost
+pymysql>=1.0.0

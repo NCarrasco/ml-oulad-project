@@ -10,9 +10,9 @@ Colaboradores y documentación de contribución
   * Implementación de limpieza, feature engineering, EDA, modelado supervisado/no supervisado, métricas y visualizaciones.
   * Separación de lógica de conexión y consultas SQL, configuración de entorno y dependencias.
   * Documentación técnica y validación de entregables.
-- [Nombre Colaborador 2] (Rol):
+- Mighel Consoro (Rol):
   * [Descripción de aportes: revisión de EDA, validación de hipótesis, apoyo en interpretación de resultados, redacción de anexos, etc.]
-- [Nombre Colaborador 3] (Rol):
+- Mighel Pimentel (Rol):
   * [Descripción de aportes: apoyo en revisión bibliográfica, pruebas de reproducibilidad, edición de README, etc.]
 
 Notas:
@@ -47,7 +47,7 @@ from utils import azul_grande, rojo, reset, print_section
 from functions.oulad_functions import OULADDataLoader, OULADInterpreter
 
 
-# Ejemplo de uso del pipeline (main)
+# pipeline (main)
 def main(max_rows: int = 200_000):
     output_dir = "results"  # Carpeta de salida para métricas y gráficos
     os.makedirs(output_dir, exist_ok=True)  # Crear carpeta si no existe
