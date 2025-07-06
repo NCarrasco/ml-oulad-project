@@ -174,13 +174,17 @@ Uso exclusivamente académico. No comercial.
 
 A continuación se muestran ejemplos de los gráficos generados automáticamente en la carpeta `results/`:
 
-| Boxplot por módulo | Boxplot por fecha | Boxplot por resultado final |
+| Boxplot por módulo | Boxplot por fecha | Boxplot por resultado final | boxplot_sum_click|
 |--------------------|-------------------|----------------------------|
-| ![boxplot_code_module](results/boxplot_code_module.png) | ![boxplot_date](results/boxplot_date.png) | ![boxplot_final_result](results/boxplot_final_result.png) |
+| ![boxplot_code_module](results/boxplot_code_module.png) | ![boxplot_date](results/boxplot_date.png) | ![boxplot_final_result](results/boxplot_final_result.png) |![boxplot sum click](results/boxplot_sum_click.png)
 
 | Histograma resultado final | Heatmap de correlación | Scatter final_result vs Withdrawn |
 |---------------------------|------------------------|-----------------------------------|
 | ![hist_final_result](results/hist_final_result.png) | ![correlation_heatmap](results/correlation_heatmap.png) | ![scatter_final_result_vs_FResult02_Withdrawn](results/scatter_final_result_vs_FResult02_Withdrawn.png) |
+
+| Feature Importance | Target Distribution |
+| ![feature_importance](results/feature_importance.png) | ![target_distribution](results/target_distribution.png)
+
 
 ## ❓ Preguntas frecuentes (FAQ)
 
