@@ -1,34 +1,197 @@
-# Ignorar salidas y archivos temporales
-results/
-*.log
-*.tmp
-*.bak
-*.swp
+# Archivos y carpetas específicos del proyecto OULAD
+corregir_data.py
+migration_script/
+migration_script/*
+validacion_db/
+validacion_db/*
+oulad_pipeline_ejemplo.ipynb
 
-# Archivos de sistema de macOS
+# Archivos temporales y de desarrollo
+*.tmp
+*.temp
+*_backup.py
+*_old.py
+*_test.py
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*checkpoint.ipynb
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Configuración de base de datos
+config/database.ini
+config/settings.py
+config/*.conf
+!config/settings_template.py
+
+# Logs
+*.log
+logs/
+log/
+
+# Resultados temporales
+results_temp/
+temp_results/
+backup_results/
+
+# Datos grandes
+data/raw/
+data/processed/
+*.csv.backup
+*.parquet
+*.h5
+*.hdf5
+
+# Modelos entrenados temporales
+models/temp/
+*.joblib.backup
+*.pkl.backup
+
+# IDE específico
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
 .DS_Store
 .AppleDouble
 .LSOverride
-Icon?
-._*
-.Spotlight-V100
-.Trashes
 
-# Archivos de Jupyter y Python
-.ipynb_checkpoints/
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Sistema de archivos de red
+$RECYCLE.BIN/
+
+# Archivos específicos del usuario
+user_config.py
+personal_notes.txt
+todo.md
+
+# Archivos de documentación temporal
+docs/temp/
+*.draft.md
+# Archivos específicos del proyecto a ignorar
+src/migration_script.py
+src/validacion_db.py
+src/oulad_pepeline2.py
+
+# Archivos temporales de desarrollo
+*.tmp
+*.temp
+*_backup.py
+*_old.py
+*_test.py
+
+# Archivos grandes de resultados (mantener solo localmente)
+results/*.joblib
+results/*.png
+results/large_*.csv
+*.docx
+
+# Archivos del sistema
+.DS_Store
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
 
-# Entornos virtuales
-venv/
-.env/
-.envrc
+# Archivos grandes de ML (mantener solo localmente)
+results/*.joblib
+results/*.png
+*.docx
 
-# Archivos de configuración de VSCode
-.vscode/
-
-# Otros archivos de sistema
-Thumbs.db
-desktop.ini
+# Archivos del sistema  
+.DS_Store
+__pycache__/
+*.pyc
