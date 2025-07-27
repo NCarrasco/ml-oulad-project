@@ -12,7 +12,7 @@ Construir modelos predictivos que identifiquen patrones de éxito académico y p
 ml-oulad-project/
 │
 ├── config/           → Configuración de conexión (settings.py)
-├── data/             → (Vacía por defecto) Carpeta para datasets locales (opcional)
+├── data/             → Carpeta para datasets locales 
 ├── src/              → Scripts Python (pipeline principal, módulos y utilidades)
 │   ├── oulad_pipeline.py
 │   ├── db_connector.py
@@ -21,8 +21,8 @@ ml-oulad-project/
 │   ├── preprocess.py
 │   ├── models/
 │   └── utils.py
-├── notebooks/        → (Vacía por defecto) Jupyter/Colab para EDA y experimentos (opcional)
-├── docs/             → (Vacía por defecto) Artículo científico (APA) y anexos
+├── notebooks/        → Jupyter/Colab para EDA y experimentos 
+├── docs/             → Artículo científico (APA) y anexos
 ├── results/          → CSV, métricas, gráficos finales
 ├── schema.sql        → (Opcional) Script SQL si se usó RDBMS
 ├── requirements.txt  → Librerías necesarias
